@@ -11,15 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120420192323) do
-
-  create_table "projects", :force => true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.string   "git_hub"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
+ActiveRecord::Schema.define(:version => 20120427180619) do
 
   create_table "users", :force => true do |t|
     t.string   "username",         :null => false
