@@ -23,7 +23,7 @@ end
 gem 'jquery-rails'
 
 
-
+gem 'bcrypt-ruby'
 gem 'sorcery'
 
 # To use ActiveModel has_secure_password

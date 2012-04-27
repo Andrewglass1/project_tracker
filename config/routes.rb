@@ -1,4 +1,5 @@
 OpenSourceProjects::Application.routes.draw do
+
   get "sessions/new"
 
   get "users/new"
@@ -10,8 +11,7 @@ OpenSourceProjects::Application.routes.draw do
   get "signup" => "users#new", :as => "signup"
   resources :users
   resources :sessions
-  get "secret" => "home#secret", :as => "secret"
-  root :to => "home#index"
+  root :to => 'projects#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
