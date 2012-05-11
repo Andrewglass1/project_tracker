@@ -3,7 +3,7 @@
   <b>Name:</b>
   <%= @project.name %>
 </p>
-<%= current_user.on_project?(@project) %>
+
 <p>
   <b>Description:</b>
   <%= @project.description %>
@@ -31,11 +31,13 @@
   <% end %>
 </p>
 
-<p>Join this project!</p>
+
 <% if can? :create, Assignment %>
-  <%= link_to 'Join', project_join_path(@project), method: :post %>
-<% end %>
-<% if can? :edit, @project %>
-  <%= link_to 'Edit', edit_project_path(@project) %> |
+  <% if current_user.on_project?(@project) %>
+    <p>You are on this project!</p>
+    <%= link_to 'Edit', edit_project_path(@project) %> |
+  <% else %>
+    <%= link_to 'Join This Project', project_join_path(@project), method: :post %>
+  <% end %>
 <% end %>
 <%= link_to 'Back', projects_path %>
