@@ -4,7 +4,9 @@ OpenSourceProjects::Application.routes.draw do
 
   get "users/new"
 
-  resources :projects
+  resources :projects do
+    post :join
+  end
   
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
@@ -12,6 +14,8 @@ OpenSourceProjects::Application.routes.draw do
   resources :users
   resources :sessions
   root :to => 'projects#index'
+
+  resources :assignments
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

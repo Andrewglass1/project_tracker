@@ -4,6 +4,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string :name
       t.string :description
       t.string :git_hub
+      t.integer :max_users
       t.timestamps
     end
   end

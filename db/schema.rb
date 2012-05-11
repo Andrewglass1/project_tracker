@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20120427184312) do
     t.string   "name"
     t.string   "description"
     t.string   "git_hub"
+    t.integer  "max_users"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
