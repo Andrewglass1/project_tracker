@@ -3,7 +3,7 @@
   <b>Name:</b>
   <%= @project.name %>
 </p>
-
+<%= current_user.on_project?(@project) %>
 <p>
   <b>Description:</b>
   <%= @project.description %>

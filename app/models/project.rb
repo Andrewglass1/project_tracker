@@ -4,7 +4,9 @@ class Project < ActiveRecord::Base
   has_many :users, :through => :assignments
 
   def add_user(user)
-    user.projects << self
+    unless user.on_project?(self)
+      user.projects << self
+    end
   end
 
   def is_full?
