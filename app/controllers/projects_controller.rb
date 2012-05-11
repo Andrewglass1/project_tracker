@@ -79,7 +79,11 @@ class ProjectsController < ApplicationController
 
   def join
     @project = Project.find(params[:project_id])
-    @project.add_user(current_user)
-    redirect_to @project
+    unless @project.is_full?
+      @project.add_user(current_user)
+      redirect_to @project
+    else
+      redirect_to @project, alert: 'project is full'
+    end
   end
 end

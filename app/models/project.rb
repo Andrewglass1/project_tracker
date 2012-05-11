@@ -7,5 +7,15 @@ class Project < ActiveRecord::Base
     user.projects << self
   end
 
-  
+  def is_full?
+    if self.users.count >= max_users
+      true
+    else
+      false
+    end
+  end
+
+  def user_ids
+    self.users.collect { |user| user.id }
+  end
 end

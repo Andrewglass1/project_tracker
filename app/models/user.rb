@@ -10,5 +10,11 @@ class User < ActiveRecord::Base
   has_many :assignments
   has_many :projects, :through => :assignments
 
-
+  def on_project?(project)
+    if project.user_ids.include?(id)
+      true
+    else
+      false
+    end
+  end
 end
