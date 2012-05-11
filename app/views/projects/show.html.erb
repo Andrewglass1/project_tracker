@@ -32,8 +32,10 @@
 </p>
 
 <p>Join this project!</p>
-<%= link_to 'Join', project_join_path(@project), method: :post %>
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %> |
-<%= link_to 'Destroy', @project, confirm: 'Are you sure?', method: :delete %>
-
+<% if can? :create, Assignment %>
+  <%= link_to 'Join', project_join_path(@project), method: :post %>
+<% end %>
+<% if can? :edit, @project %>
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+<% end %>
+<%= link_to 'Back', projects_path %>
