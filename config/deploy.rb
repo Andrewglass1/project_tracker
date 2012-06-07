@@ -8,7 +8,7 @@ set :repository,  "git@github.com:Andrewglass1/project_tracker.git"
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
-
+set :user, "vagrant"
 
 set :deploy_to, "/vagrant/project_tracker"
 
